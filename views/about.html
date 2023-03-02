@@ -1,0 +1,21 @@
+{{ template "layout" .}}
+
+
+{{ define "main" }}
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  {{ range . }}
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="{{ .Id }}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        {{ .Title }}
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+          {{ .Desc }}
+      </div>
+    </div>
+  </div>
+  {{ end }} 
+</div>
+{{ end }}
